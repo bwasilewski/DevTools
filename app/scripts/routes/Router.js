@@ -14,7 +14,7 @@ Devtools.Routers = Devtools.Routers || {};
         },
 
         defaultRoute: function (actions) {
-            console.log('Actions: ', actions);
+            // console.log('Actions: ', actions);
 
             this.homeRoute();
         },
