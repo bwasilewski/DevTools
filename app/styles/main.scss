@@ -13,6 +13,16 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+    clear: both;
+}
+
+.alert {
+    position: absolute;
+    margin: 0 auto;
+}
+
+.alertWrapper {
+    position: relative;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

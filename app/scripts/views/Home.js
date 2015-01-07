@@ -15,8 +15,14 @@ Devtools.Views = Devtools.Views || {};
             'click .btn-tooltip': 'handleTooltipClick'
         },
 
+        initialize: function () {
+
+            // initialize tooltips
+            $('[data-toggle="tooltip"]').tooltip();
+        },
+
         handleAlertClick: function (ev) {
-            var alertWrapper = $('#alertWrapper');
+            var alertWrapper = this.$('#alertWrapper');
 
             var alert = new Devtools.Views.Alert({
                 model: new Backbone.Model({
@@ -31,7 +37,16 @@ Devtools.Views = Devtools.Views || {};
         },
 
         handleModalClick: function (ev) {
+            var modalWrapper = this.$('#modalWrapper');
 
+            var modal = new Devtools.Views.Modal({
+                model: new Backbone.Model({
+                    title: 'Cool Modal',
+                    message: 'You\'ve successfully created a new modal!'
+                })
+            });
+
+            modalWrapper.html(modal.render().el);
         },
 
         handleTooltipClick: function (ev) {
