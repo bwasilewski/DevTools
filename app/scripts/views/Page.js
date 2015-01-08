@@ -22,10 +22,18 @@ Devtools.Views = Devtools.Views || {};
         },
 
         render: function () {
+            var self = this;
+
             this.$el.html(this.template(this.model.toJSON()));
+
+            // _.defer(function () {
+                self.onRender();
+            // });
 
             return this;
         },
+
+        onRender: function () { },
 
         close: function () {
             this.remove();
