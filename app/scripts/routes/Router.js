@@ -10,13 +10,20 @@ Devtools.Routers = Devtools.Routers || {};
             '' : 'defaultRoute',
             'home'     : 'homeRoute',
             'about'    : 'aboutRoute',
-            'contact'  : 'contactRoute'
         },
 
         defaultRoute: function (actions) {
-            // console.log('Actions: ', actions);
-
-            this.homeRoute();
+            switch (actions) {
+                case 'about':
+                    this.aboutRoute();
+                    break;
+                case 'home':
+                    this.homeRoute();
+                    break;
+                default:
+                    this.homeRoute();
+                    break;
+            }
         },
 
         homeRoute: function () {
@@ -37,18 +44,6 @@ Devtools.Routers = Devtools.Routers || {};
             this.closeCurrentView();
 
             this.currentView = new Devtools.Views.About({
-                model: new Devtools.Models.Page({})
-            });
-
-            contentWrapper.html(this.currentView.render().el);
-        },
-
-        contactRoute: function () {
-            var contentWrapper = $('#content');
-
-            this.closeCurrentView();
-
-            this.currentView = new Devtools.Views.Contact({
                 model: new Devtools.Models.Page({})
             });
 
